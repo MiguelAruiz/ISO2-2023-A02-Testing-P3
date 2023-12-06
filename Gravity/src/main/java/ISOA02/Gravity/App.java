@@ -12,12 +12,9 @@ public class App {
 	  double d = 0;
 	  
 	  try {
-	  System.out.print("Introduce the mass value for Body1 (Kg):");
-	  m1=Read.read_double();
-	  System.out.print("Introduce the mass value for Body2 (Kg):");
-	  m2=Read.read_double();
-	  System.out.print("Introduce the distance value between Body1 and Body2 (Meters):");
-	  d=Read.read_double();
+	  m1=Read.read_double("Introduce the mass value for Body1 (Kg):");
+	  m2=Read.read_double("Introduce the mass value for Body2 (Kg):");
+	  d=Read.read_double("Introduce the distance value between Body1 and Body2 (Meters):");
 	  
 	  }catch(InputMismatchException e) {
 		  System.out.print("InputMismatchException: the value introduced is not valid.");
