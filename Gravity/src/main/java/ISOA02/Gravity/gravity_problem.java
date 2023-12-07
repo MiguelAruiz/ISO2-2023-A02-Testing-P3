@@ -9,9 +9,33 @@ public class gravity_problem {
 	final private double G=6.67*Math.pow(10, -11);
 	
 	public gravity_problem(double m1, double m2, double d) {
-		this.m1=m1;
-		this.m2=m2;
-		this.d=d;
+		this.setBodyMass1(m1);
+		this.setBodyMass2(m2);
+		this.setDistance(d);
+	}
+	
+	public double getBodyMass1() {
+		return this.m1;
+	}
+	
+	public double getBodyMass2() {
+		return this.m2;
+	}
+	
+	public double getDistance() {
+		return this.d;
+	}
+	
+	public void setBodyMass1(double newMass1) {
+		this.m1 = newMass1;
+	}
+	
+	public void setBodyMass2(double newMass2) {
+		this.m2 = newMass2;
+	}
+	
+	public void setDistance(double newDistance) {
+		this.d = newDistance;
 	}
 	
 	public double calculate_force() throws DividedByZeroException, InvalidValueException{
@@ -27,6 +51,8 @@ public class gravity_problem {
 		if(m1<=0) {
 			throw new InvalidValueException();
 		}
-		return (G*m1*m2)/(d*d);
+		return (G*this.m1*this.m2)/(this.d*this.d);
 	}
+	
+	
 }

@@ -4,7 +4,6 @@ import java.util.Scanner;
 import reading.Read;
 
 public class App {
-	static Scanner s=new Scanner(System.in);
   public static void main(String[] args) {
 	  
 	  double m1 = 0;
