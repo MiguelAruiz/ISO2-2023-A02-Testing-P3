@@ -42,13 +42,7 @@ public class gravity_problem {
 		if(d==0) {
 			throw new DividedByZeroException();
 		}
-		if(d<0) {
-			throw new InvalidValueException();
-		}
-		if(m2<=0) {
-			throw new InvalidValueException();	
-		}
-		if(m1<=0) {
+		if(d<0 || m2<=0 || m1<=0) {
 			throw new InvalidValueException();
 		}
 		return (G*this.m1*this.m2)/(this.d*this.d);
