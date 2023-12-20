@@ -27,14 +27,14 @@ public class gravity_problem {
 	}
 	
 	public void setBodyMass1(double newMass1) throws InvalidValueException {
-		if(newMass1 < 0) {
+		if(newMass1 <= 0) {
 			throw new InvalidValueException();
 		}
 		this.m1 = newMass1;
 	}
 	
 	public void setBodyMass2(double newMass2) throws InvalidValueException{
-		if(newMass2 < 0) {
+		if(newMass2 <= 0) {
 			throw new InvalidValueException();
 		}
 		this.m2 = newMass2;
