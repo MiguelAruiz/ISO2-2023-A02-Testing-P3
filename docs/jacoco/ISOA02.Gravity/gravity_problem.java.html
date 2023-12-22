@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>gravity_problem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Gravity Project</a> &gt; <a href="index.source.html" class="el_package">ISOA02.Gravity</a> &gt; <span class="el_source">gravity_problem.java</span></div><h1>gravity_problem.java</h1><pre class="source lang-java linenums">package ISOA02.Gravity;
+
+public class gravity_problem {
+	
+	private double m1; // Mass of Body1
+	private double m2; // Mass of Body2
+	private double d; // Distance between Body1 &amp; Body2
+	
+<span class="fc" id="L9">	final private double G=6.67*Math.pow(10, -11);</span>
+	
+<span class="fc" id="L11">	public gravity_problem(double m1, double m2, double d) throws DividedByZeroException, InvalidValueException {</span>
+<span class="fc" id="L12">		this.setBodyMass1(m1);</span>
+<span class="fc" id="L13">		this.setBodyMass2(m2);</span>
+<span class="fc" id="L14">		this.setDistance(d);</span>
+<span class="fc" id="L15">	}</span>
+	
+	public double getBodyMass1() {
+<span class="fc" id="L18">		return this.m1;</span>
+	}
+	
+	public double getBodyMass2() {
+<span class="fc" id="L22">		return this.m2;</span>
+	}
+	
+	public double getDistance() {
+<span class="fc" id="L26">		return this.d;</span>
+	}
+	
+	public void setBodyMass1(double newMass1) throws InvalidValueException {
+<span class="fc bfc" id="L30" title="All 2 branches covered.">		if(newMass1 &lt;= 0) {</span>
+<span class="fc" id="L31">			throw new InvalidValueException();</span>
+		}
+<span class="fc" id="L33">		this.m1 = newMass1;</span>
+<span class="fc" id="L34">	}</span>
+	
+	public void setBodyMass2(double newMass2) throws InvalidValueException{
+<span class="fc bfc" id="L37" title="All 2 branches covered.">		if(newMass2 &lt;= 0) {</span>
+<span class="fc" id="L38">			throw new InvalidValueException();</span>
+		}
+<span class="fc" id="L40">		this.m2 = newMass2;</span>
+<span class="fc" id="L41">	}</span>
+	
+	public void setDistance(double newDistance) throws DividedByZeroException, InvalidValueException{
+<span class="fc bfc" id="L44" title="All 2 branches covered.">		if(newDistance == 0) {</span>
+<span class="fc" id="L45">			throw new DividedByZeroException();</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">		}else if(newDistance &lt; 0) {</span>
+<span class="fc" id="L47">			throw new InvalidValueException();</span>
+		}
+		
+<span class="fc" id="L50">		this.d = newDistance;</span>
+<span class="fc" id="L51">	}</span>
+	
+	public double calculate_force() {
+<span class="fc" id="L54">		return (G*this.m1*this.m2)/(this.d*this.d);</span>
+	}
+	
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

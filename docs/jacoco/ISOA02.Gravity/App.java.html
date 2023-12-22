@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>App.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Gravity Project</a> &gt; <a href="index.source.html" class="el_package">ISOA02.Gravity</a> &gt; <span class="el_source">App.java</span></div><h1>App.java</h1><pre class="source lang-java linenums">package ISOA02.Gravity;
+import reading.Read;
+
+<span class="nc" id="L4">public class App {</span>
+  public static void main(String[] args) {
+	  
+<span class="fc" id="L7">	  double m1 = 0;</span>
+<span class="fc" id="L8">	  double m2 = 0;</span>
+<span class="fc" id="L9">	  double d = 0;</span>
+<span class="fc" id="L10">	  double force = 0;</span>
+	  gravity_problem gv;
+	  
+<span class="fc" id="L13">	  m1=Read.read_double(&quot;Introduce the mass value for Body1 (Kg):&quot;);</span>
+<span class="fc" id="L14">	  m2=Read.read_double(&quot;Introduce the mass value for Body2 (Kg):&quot;);</span>
+<span class="fc" id="L15">	  d=Read.read_double(&quot;Introduce the distance value between Body1 and Body2 (Meters):&quot;);</span>
+
+	  try {
+<span class="fc" id="L18">		  gv=new gravity_problem(m1,m2,d);</span>
+<span class="fc" id="L19">		  force = gv.calculate_force();</span>
+<span class="fc" id="L20">		  System.out.println(&quot;The total force is &quot;+force+ &quot; Newtons.&quot;);</span>
+<span class="pc" id="L21">	  }catch(DividedByZeroException e) {</span>
+<span class="nc" id="L22">		  System.out.print(&quot;DividedByZeroException: D cannot be zero.&quot;);</span>
+<span class="nc" id="L23">	  }catch(InvalidValueException e) {</span>
+<span class="nc" id="L24">		  System.out.print(&quot;InvalidValueException: no value can be negative.&quot;);</span>
+	  }    
+<span class="fc" id="L26">  }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
