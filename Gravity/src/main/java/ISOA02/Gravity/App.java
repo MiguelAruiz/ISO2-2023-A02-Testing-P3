@@ -1,6 +1,4 @@
 package ISOA02.Gravity;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import reading.Read;
 
 public class App {
@@ -19,7 +17,7 @@ public class App {
 	  try {
 		  gv=new gravity_problem(m1,m2,d);
 		  force = gv.calculate_force();
-		  System.out.print("The total force is "+force+ " Newtons.");
+		  System.out.println("The total force is "+force+ " Newtons.");
 	  }catch(DividedByZeroException e) {
 		  System.out.print("DividedByZeroException: D cannot be zero.");
 	  }catch(InvalidValueException e) {
